@@ -1,0 +1,370 @@
+{
+  "board": {
+    "name": "USA India CFO — Marketing Operations",
+    "org": "BNG Group",
+    "updated": "2026-06-05",
+    "columns": [
+      { "id": "backlog", "name": "Backlog" },
+      { "id": "todo", "name": "To Do" },
+      { "id": "inprogress", "name": "In Progress" },
+      { "id": "review", "name": "Review" },
+      { "id": "done", "name": "Done" }
+    ],
+    "disciplines": [
+      { "id": "social", "name": "Social Media" },
+      { "id": "performance", "name": "Performance" },
+      { "id": "seo", "name": "SEO" },
+      { "id": "content", "name": "Content" }
+    ],
+    "members": [
+      { "id": "ad", "name": "Aanya Desai", "initials": "AD", "role": "Manager" },
+      { "id": "rk", "name": "Rohan Kapoor", "initials": "RK", "role": "Performance Lead" },
+      { "id": "mj", "name": "Meera Joshi", "initials": "MJ", "role": "SEO Analyst" },
+      { "id": "sc", "name": "Sam Carter", "initials": "SC", "role": "Content" },
+      { "id": "aa", "name": "Amit Agarwal", "initials": "AA", "role": "Partner" }
+    ]
+  },
+  "tasks": [
+    {
+      "id": "T-101",
+      "title": "Q3 LinkedIn thought-leadership series",
+      "description": "Six-part series on cross-border CFO services targeting US founders expanding into India. One long-form post per week from the founder's voice.",
+      "status": "inprogress",
+      "priority": "high",
+      "discipline": "social",
+      "platform": "linkedin",
+      "assignee": "ad",
+      "due": "2026-06-12",
+      "labels": ["thought-leadership", "founder-voice"],
+      "checklist": [
+        { "text": "Outline 6 topics", "done": true },
+        { "text": "Draft posts 1–3", "done": true },
+        { "text": "Design carousel templates", "done": false },
+        { "text": "Schedule via Buffer", "done": false }
+      ]
+    },
+    {
+      "id": "T-102",
+      "title": "Instagram Reels: ‘Best of Both Worlds’ explainer",
+      "description": "30s reel explaining the India–US finance bridge. Hook in first 2s, captioned, branded end-card.",
+      "status": "todo",
+      "priority": "med",
+      "discipline": "social",
+      "platform": "instagram",
+      "assignee": "sc",
+      "due": "2026-06-18",
+      "labels": ["reel", "awareness"],
+      "checklist": [
+        { "text": "Script + storyboard", "done": true },
+        { "text": "Shoot footage", "done": false },
+        { "text": "Edit + caption", "done": false }
+      ]
+    },
+    {
+      "id": "T-103",
+      "title": "Scale Google Search Ads — ‘virtual CFO India’",
+      "description": "Raise daily budget on the top converting ad group from ₹3,200 to ₹5,000 and add 12 long-tail negatives. Target CPL under ₹780.",
+      "status": "inprogress",
+      "priority": "high",
+      "discipline": "performance",
+      "platform": "google-ads",
+      "assignee": "rk",
+      "due": "2026-06-09",
+      "labels": ["paid-search", "lead-gen"],
+      "checklist": [
+        { "text": "Audit search-term report", "done": true },
+        { "text": "Add negative keywords", "done": true },
+        { "text": "Raise budget", "done": false },
+        { "text": "Set CPL alert", "done": false }
+      ]
+    },
+    {
+      "id": "T-104",
+      "title": "Pause wasted spend — Meta retargeting set 3",
+      "description": "Ad set burned $1,420 at a $61 cost-per-lead with 0 conversions in 14 days. Pause and reallocate to the best-performing lookalike.",
+      "status": "todo",
+      "priority": "high",
+      "discipline": "performance",
+      "platform": "meta-ads",
+      "assignee": "rk",
+      "due": "2026-06-07",
+      "labels": ["wasted-spend", "optimisation"],
+      "checklist": [
+        { "text": "Confirm 14-day window", "done": true },
+        { "text": "Pause ad set", "done": false },
+        { "text": "Reallocate budget", "done": false }
+      ]
+    },
+    {
+      "id": "T-105",
+      "title": "Fix keyword cannibalisation — ‘outsourced CFO’",
+      "description": "Two landing pages compete for the same query, splitting authority. Consolidate to the services hub and 301 the weaker URL.",
+      "status": "review",
+      "priority": "med",
+      "discipline": "seo",
+      "platform": "seo",
+      "assignee": "mj",
+      "due": "2026-06-10",
+      "labels": ["technical-seo", "rankings"],
+      "checklist": [
+        { "text": "Map overlapping queries", "done": true },
+        { "text": "Choose canonical page", "done": true },
+        { "text": "Set up 301 redirect", "done": true },
+        { "text": "Request re-index", "done": false }
+      ]
+    },
+    {
+      "id": "T-106",
+      "title": "Monthly leadership growth report — May",
+      "description": "One-page MoM summary: followers, leads, cost-per-lead, organic traffic. Export to PDF and schedule the email send.",
+      "status": "done",
+      "priority": "high",
+      "discipline": "content",
+      "platform": "medium",
+      "assignee": "ad",
+      "due": "2026-06-02",
+      "labels": ["reporting", "leadership"],
+      "checklist": [
+        { "text": "Pull MoM numbers", "done": true },
+        { "text": "Build report cards", "done": true },
+        { "text": "Export PDF", "done": true },
+        { "text": "Schedule email", "done": true }
+      ]
+    },
+    {
+      "id": "T-107",
+      "title": "Comment-to-DM automation: ‘INFO’ → guide",
+      "description": "Set up keyword automation: when someone comments INFO on the CFO checklist post, auto-DM the download link. Live on IG & FB only.",
+      "status": "inprogress",
+      "priority": "med",
+      "discipline": "social",
+      "platform": "instagram",
+      "assignee": "sc",
+      "due": "2026-06-14",
+      "labels": ["automation", "lead-magnet"],
+      "checklist": [
+        { "text": "Pick CTA post", "done": true },
+        { "text": "Write DM + link", "done": true },
+        { "text": "Set keyword trigger", "done": false },
+        { "text": "Test on IG", "done": false }
+      ]
+    },
+    {
+      "id": "T-108",
+      "title": "Reddit AMA prep — r/IndiaInvestments",
+      "description": "Founder AMA on cross-border tax structuring. Draft 10 seed Q&As, schedule mods, prepare compliance-safe answers.",
+      "status": "backlog",
+      "priority": "low",
+      "discipline": "social",
+      "platform": "reddit",
+      "assignee": "ad",
+      "due": "2026-07-01",
+      "labels": ["community", "awareness"],
+      "checklist": [
+        { "text": "Coordinate with mods", "done": false },
+        { "text": "Draft seed questions", "done": false }
+      ]
+    },
+    {
+      "id": "T-109",
+      "title": "Quora answer sprint — ‘CFO services cost’",
+      "description": "Answer the 8 highest-traffic Quora questions on virtual CFO pricing with a soft CTA back to the pricing page.",
+      "status": "todo",
+      "priority": "low",
+      "discipline": "social",
+      "platform": "quora",
+      "assignee": "aa",
+      "due": "2026-06-22",
+      "labels": ["organic", "referral-traffic"],
+      "checklist": [
+        { "text": "Shortlist 8 questions", "done": true },
+        { "text": "Draft answers", "done": false }
+      ]
+    },
+    {
+      "id": "T-110",
+      "title": "LinkedIn Ads — lead-gen form A/B test",
+      "description": "Test a 4-field vs 6-field instant form for the ‘India entry playbook’ offer. Measure cost-per-lead and lead quality.",
+      "status": "inprogress",
+      "priority": "med",
+      "discipline": "performance",
+      "platform": "linkedin-ads",
+      "assignee": "rk",
+      "due": "2026-06-16",
+      "labels": ["a-b-test", "lead-gen"],
+      "checklist": [
+        { "text": "Build both forms", "done": true },
+        { "text": "Split traffic 50/50", "done": true },
+        { "text": "Collect 2 weeks data", "done": false }
+      ]
+    },
+    {
+      "id": "T-111",
+      "title": "JioHotstar Ads — brand awareness flight",
+      "description": "Two-week awareness flight around the budget-season finance content. Cap frequency at 3, measure view-through.",
+      "status": "backlog",
+      "priority": "low",
+      "discipline": "performance",
+      "platform": "jiohotstar",
+      "assignee": "rk",
+      "due": "2026-07-10",
+      "labels": ["awareness", "video"],
+      "checklist": [
+        { "text": "Confirm budget", "done": false },
+        { "text": "Deliver creative specs", "done": false }
+      ]
+    },
+    {
+      "id": "T-112",
+      "title": "New pillar page: ‘India market entry for US firms’",
+      "description": "3,000-word pillar targeting a 1,900/mo query cluster. Internal-link 6 supporting posts. Aim for page-1 in 90 days.",
+      "status": "todo",
+      "priority": "high",
+      "discipline": "seo",
+      "platform": "seo",
+      "assignee": "mj",
+      "due": "2026-06-28",
+      "labels": ["content-seo", "pillar"],
+      "checklist": [
+        { "text": "Keyword cluster map", "done": true },
+        { "text": "Outline + brief", "done": true },
+        { "text": "Draft copy", "done": false },
+        { "text": "Internal links", "done": false }
+      ]
+    },
+    {
+      "id": "T-113",
+      "title": "Backlink outreach — finance podcasts",
+      "description": "Pitch the founder to 12 India–US finance podcasts for guest spots; target 4 booked with do-follow show-note links.",
+      "status": "inprogress",
+      "priority": "med",
+      "discipline": "seo",
+      "platform": "seo",
+      "assignee": "mj",
+      "due": "2026-06-20",
+      "labels": ["off-page", "authority"],
+      "checklist": [
+        { "text": "Build prospect list", "done": true },
+        { "text": "Send pitches", "done": true },
+        { "text": "Follow up", "done": false }
+      ]
+    },
+    {
+      "id": "T-114",
+      "title": "X (Twitter) thread: 5 cross-border tax myths",
+      "description": "Punchy 7-tweet thread debunking common India–US tax myths. Pin for the week, repurpose into a carousel.",
+      "status": "review",
+      "priority": "low",
+      "discipline": "social",
+      "platform": "x",
+      "assignee": "sc",
+      "due": "2026-06-08",
+      "labels": ["thread", "engagement"],
+      "checklist": [
+        { "text": "Draft 7 tweets", "done": true },
+        { "text": "Fact-check claims", "done": true },
+        { "text": "Schedule", "done": false }
+      ]
+    },
+    {
+      "id": "T-115",
+      "title": "Facebook lead-form retarget — webinar no-shows",
+      "description": "Retarget the 220 webinar registrants who didn't attend with the on-demand replay and a booking CTA.",
+      "status": "todo",
+      "priority": "med",
+      "discipline": "performance",
+      "platform": "facebook",
+      "assignee": "rk",
+      "due": "2026-06-19",
+      "labels": ["retargeting", "nurture"],
+      "checklist": [
+        { "text": "Build custom audience", "done": true },
+        { "text": "Upload replay creative", "done": false }
+      ]
+    },
+    {
+      "id": "T-116",
+      "title": "Refresh Medium publication — pin top 3",
+      "description": "Update the Medium publication header, pin the three best-performing essays, and add a footer CTA to all posts.",
+      "status": "done",
+      "priority": "low",
+      "discipline": "content",
+      "platform": "medium",
+      "assignee": "sc",
+      "due": "2026-05-30",
+      "labels": ["housekeeping"],
+      "checklist": [
+        { "text": "Update header", "done": true },
+        { "text": "Pin top 3", "done": true },
+        { "text": "Add footer CTA", "done": true }
+      ]
+    },
+    {
+      "id": "T-117",
+      "title": "Search Console: fix 11 crawl errors",
+      "description": "Resolve soft-404s and a duplicate-canonical issue flagged in Search Console; validate the fix and request re-crawl.",
+      "status": "backlog",
+      "priority": "med",
+      "discipline": "seo",
+      "platform": "seo",
+      "assignee": "mj",
+      "due": "2026-06-25",
+      "labels": ["technical-seo", "crawlability"],
+      "checklist": [
+        { "text": "Triage errors", "done": false },
+        { "text": "Ship fixes", "done": false },
+        { "text": "Validate + re-crawl", "done": false }
+      ]
+    },
+    {
+      "id": "T-118",
+      "title": "Amit Agarwal — LinkedIn cadence reset",
+      "description": "Partner profile: move to a steady 3-posts/week cadence mixing personal finance takes and CFO insights.",
+      "status": "todo",
+      "priority": "low",
+      "discipline": "social",
+      "platform": "linkedin",
+      "assignee": "aa",
+      "due": "2026-06-21",
+      "labels": ["partner", "cadence"],
+      "checklist": [
+        { "text": "Build 3-week content bank", "done": false },
+        { "text": "Schedule batch 1", "done": false }
+      ]
+    },
+    {
+      "id": "T-119",
+      "title": "Creative refresh — best ad fatigue",
+      "description": "Top Google performer's CTR dropped 22% over 3 weeks. Produce 3 new headline + image variants to refresh.",
+      "status": "inprogress",
+      "priority": "high",
+      "discipline": "performance",
+      "platform": "google-ads",
+      "assignee": "rk",
+      "due": "2026-06-13",
+      "labels": ["creative", "optimisation"],
+      "checklist": [
+        { "text": "Pull fatigue data", "done": true },
+        { "text": "Write 3 headlines", "done": false },
+        { "text": "Design 3 images", "done": false }
+      ]
+    },
+    {
+      "id": "T-120",
+      "title": "Engagement inbox SLA: under 2h replies",
+      "description": "Audit last month's response times across platforms and set up the unified-inbox routing to hit a 2-hour reply SLA.",
+      "status": "review",
+      "priority": "med",
+      "discipline": "social",
+      "platform": "facebook",
+      "assignee": "ad",
+      "due": "2026-06-11",
+      "labels": ["inbox", "service"],
+      "checklist": [
+        { "text": "Audit response times", "done": true },
+        { "text": "Configure routing", "done": true },
+        { "text": "Document SLA", "done": false }
+      ]
+    }
+  ]
+}
