@@ -117,6 +117,8 @@ function App() {
   const openTask = openId ? tasks.find(t => t.id === openId) : null;
   const sectionLabel = (NAV.find(n => n.id === activeNav) || {}).label || "Task Board";
 
+  const isBoard = activeNav === "board";
+
   return (
     <div className="app">
       <AppBar theme={theme} onToggleTheme={() => setTheme(t => t === "dark" ? "light" : "dark")} user={user} />
@@ -130,19 +132,27 @@ function App() {
               <b>{sectionLabel}</b>
             </div>
           </div>
-          <Controls
-            q={q} setQ={setQ} group={group} setGroup={setGroup} sort={sort} setSort={setSort}
-            filters={filters} setFilters={setFilters} members={members} board={board}
-            total={tasks.length} shown={visible.length}
-            onExport={() => fireToast("Board exported — report.pdf is downloading")}
-          />
-          <div className="board-scroll">
-            {visible.length === 0
-              ? <div style={{ maxWidth: 320, margin: "60px auto" }}><EmptyState title="No tasks match your filters" sub="Try clearing search or filters to see the full board." /></div>
-              : <Board board={board} tasks={visible} group={group} members={members}
-                  draggingId={draggingId} onOpen={setOpenId} onDropCard={onDropCard}
-                  onDragStart={onDragStart} onDragEnd={onDragEnd} />}
-          </div>
+          {isBoard ? (
+            <React.Fragment>
+              <Controls
+                q={q} setQ={setQ} group={group} setGroup={setGroup} sort={sort} setSort={setSort}
+                filters={filters} setFilters={setFilters} members={members} board={board}
+                total={tasks.length} shown={visible.length}
+                onExport={() => fireToast("Board exported — report.pdf is downloading")}
+              />
+              <div className="board-scroll">
+                {visible.length === 0
+                  ? <div style={{ maxWidth: 320, margin: "60px auto" }}><EmptyState title="No tasks match your filters" sub="Try clearing search or filters to see the full board." /></div>
+                  : <Board board={board} tasks={visible} group={group} members={members}
+                      draggingId={draggingId} onOpen={setOpenId} onDropCard={onDropCard}
+                      onDragStart={onDragStart} onDragEnd={onDragEnd} />}
+              </div>
+            </React.Fragment>
+          ) : (
+            <div className="anl-wrap">
+              <Analytics activeNav={activeNav} />
+            </div>
+          )}
         </div>
       </div>
       {openTask && <TaskModal task={openTask} members={members} onClose={() => setOpenId(null)} onToggleCheck={onToggleCheck} />}

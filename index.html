@@ -11,6 +11,10 @@
 <script>
   // apply persisted theme before paint to avoid flash
   try { document.documentElement.setAttribute('data-theme', localStorage.getItem('uic_theme') || 'dark'); } catch(e){}
+  // ── Backend URL ──────────────────────────────────────────────
+  // After deploying backend/ to Railway, paste your Railway domain here.
+  // Example: window.BACKEND_URL = 'https://usaindiacfo-api.up.railway.app';
+  window.BACKEND_URL = '';
 </script>
 </head>
 <body>
@@ -403,6 +407,7 @@
 <script type="text/babel" src="js/card.jsx"></script>
 <script type="text/babel" src="js/board.jsx"></script>
 <script type="text/babel" src="js/chrome.jsx"></script>
+<script type="text/babel" src="js/analytics.jsx"></script>
 <script type="text/babel" src="js/app.jsx"></script>
 </body>
 </html>
