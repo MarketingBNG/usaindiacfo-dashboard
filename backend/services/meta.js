@@ -16,7 +16,10 @@ async function getSocialMetrics(token) {
   const now   = Math.floor(Date.now() / 1000);
   const since = now - 30 * 86400;
 
-  const [insR, postsR] = await Promise.allSettled([
+  const [fieldsR, insR, postsR] = await Promise.allSettled([
+    axios.get(`${BASE}/${page.id}`, {
+      params: { fields: 'name,fan_count,followers_count', access_token: page.access_token },
+    }),
     axios.get(`${BASE}/${page.id}/insights`, {
       params: {
         metric: 'page_fans,page_fan_adds,page_impressions,page_reach,page_post_engagements',
@@ -32,14 +35,15 @@ async function getSocialMetrics(token) {
     }),
   ]);
 
+  const fields   = fieldsR.status === 'fulfilled' ? fieldsR.value.data : {};
   const insights = insR.status === 'fulfilled' ? insR.value.data.data : [];
   const posts    = postsR.status === 'fulfilled' ? postsR.value.data.data : [];
   const getM = (name) => { const m = insights.find(i => i.name === name); return m?.values?.[m.values.length-1]?.value || 0; };
 
   const facebook = {
     connected:      true,
-    page_name:      page.name,
-    followers:      getM('page_fans'),
+    page_name:      fields.name || page.name,
+    followers:      fields.followers_count || fields.fan_count || getM('page_fans'),
     follower_growth:getM('page_fan_adds'),
     reach:          getM('page_reach'),
     impressions:    getM('page_impressions'),
