@@ -11,7 +11,7 @@ const PLATFORMS = {
   meta: {
     authUrl:      'https://www.facebook.com/v20.0/dialog/oauth',
     tokenUrl:     'https://graph.facebook.com/v20.0/oauth/access_token',
-    scope:        'pages_show_list,pages_read_engagement,ads_read',
+    scope:        'pages_show_list,pages_read_engagement,instagram_basic,ads_read',
     clientId:     () => process.env.META_APP_ID,
     clientSecret: () => process.env.META_APP_SECRET,
   },

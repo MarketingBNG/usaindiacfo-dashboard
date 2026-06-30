@@ -61,24 +61,26 @@ async function getSocialMetrics(token) {
   let instagram = { connected: false };
   if (page.instagram_business_account) {
     const igId = page.instagram_business_account.id;
-    try {
-      const [igU, igM, igI] = await Promise.all([
-        axios.get(`${BASE}/${igId}`, { params: { fields: 'followers_count,media_count,username', access_token: page.access_token } }),
-        axios.get(`${BASE}/${igId}/media`, { params: { fields: 'id,caption,like_count,comments_count,timestamp,media_type', limit: 10, access_token: page.access_token } }),
-        axios.get(`${BASE}/${igId}/insights`, { params: { metric: 'reach,impressions,profile_views', period: 'month', since, until: now, access_token: page.access_token } }),
-      ]);
-      const igGet = (n) => { const m = igI.data.data?.find(i => i.name===n); return m?.values?.[m.values.length-1]?.value||0; };
-      instagram = {
-        connected:     true,
-        username:      igU.data.username,
-        followers:     igU.data.followers_count,
-        posts_count:   igU.data.media_count,
-        reach:         igGet('reach'),
-        impressions:   igGet('impressions'),
-        profile_views: igGet('profile_views'),
-        media: (igM.data.data||[]).map(m => ({ id: m.id, caption: (m.caption||'').slice(0,90), likes: m.like_count, comments: m.comments_count, type: m.media_type, timestamp: m.timestamp })),
-      };
-    } catch (e) { instagram = { connected: true, error: e.message }; }
+    // allSettled so followers/media still show even if insights permission is missing
+    const [igU, igM, igI] = await Promise.allSettled([
+      axios.get(`${BASE}/${igId}`, { params: { fields: 'followers_count,media_count,username', access_token: page.access_token } }),
+      axios.get(`${BASE}/${igId}/media`, { params: { fields: 'id,caption,like_count,comments_count,timestamp,media_type', limit: 10, access_token: page.access_token } }),
+      axios.get(`${BASE}/${igId}/insights`, { params: { metric: 'reach,impressions,profile_views', period: 'month', since, until: now, access_token: page.access_token } }),
+    ]);
+    const u        = igU.status === 'fulfilled' ? igU.value.data : {};
+    const mediaArr = igM.status === 'fulfilled' ? (igM.value.data.data || []) : [];
+    const insArr   = igI.status === 'fulfilled' ? (igI.value.data.data || []) : [];
+    const igGet = (n) => { const m = insArr.find(i => i.name === n); return m?.values?.[m.values.length-1]?.value || 0; };
+    instagram = {
+      connected:     true,
+      username:      u.username,
+      followers:     u.followers_count || 0,
+      posts_count:   u.media_count || 0,
+      reach:         igGet('reach'),
+      impressions:   igGet('impressions'),
+      profile_views: igGet('profile_views'),
+      media: mediaArr.map(m => ({ id: m.id, caption: (m.caption||'').slice(0,90), likes: m.like_count, comments: m.comments_count, type: m.media_type, timestamp: m.timestamp })),
+    };
   }
   return { facebook, instagram };
 }
